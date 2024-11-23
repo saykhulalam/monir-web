@@ -34,7 +34,7 @@ const Navegation = () => {
             </div>
           </div>
           <div
-            className={` border xl:hidden border-white absolute bg-black py-10 px-5 w-[80%] duration-300 ${
+            className={` z-50 border xl:hidden border-white absolute bg-black py-10 px-5 w-[80%] duration-300 ${
               isOpen ? "left-[-16px] top-[95px]" : "left-[-1000px] top-[95px]"
             }`}
           >
