@@ -80,9 +80,9 @@ const ProducatPage = () => {
   };
 
   return (
-    <section id="producat" className="mt-10">
+    <section id="producat" className="mt-14">
       <Container>
-        <h1 className="text-[35px] font-bold text-center font-bangla">
+        <h1 className="text-[35px] font-bold text-center font-bangla bg-black text-white">
           All product (সমস্ত পণ্য)
         </h1>
         <div className="flex justify-between flex-wrap gap-5 mt-10">

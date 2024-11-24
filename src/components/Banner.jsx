@@ -19,7 +19,7 @@ const Banner = () => {
           autoplayDelay={2000}
           loop="true"
           autoplay="true"
-          className="xl:mt-10 mt-5"
+          className="xl:mt-[125px] mt-[130px]"
           navigation={({ setActiveIndex, activeIndex, length }) => (
             <div className="absolute hidden bottom-4 left-2/4 z-50  -translate-x-2/4 gap-2">
               {new Array(length).fill("").map((_, i) => (

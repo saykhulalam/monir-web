@@ -2,10 +2,10 @@ import React from "react";
 
 const ProductCard = ({ name, image, prize, onOrderClick }) => {
   return (
-    <div className="flex flex-col items-center border-4 border-black w-[250px] pb-4 rounded-lg hover:shadow-lg transition-shadow duration-200">
+    <div className="flex flex-col items-center border-4 border-black w-[250px] pb-4 rounded-lg hover:shadow-lg transition-shadow duration-200 group overflow-hidden">
       {/* Product Image */}
       <img
-        className="w-[230px] h-[200px] object-cover rounded-t-lg"
+        className="w-[230px] h-[200px] object-cover rounded-t-lg group-hover:scale-110 duration-300"
         src={image}
         alt={name}
       />
