@@ -82,7 +82,7 @@ const ProducatPage = () => {
   return (
     <section id="producat" className="mt-14">
       <Container>
-        <h1 className="text-[35px] font-bold text-center font-bangla bg-black text-white">
+        <h1 className="xl:text-[35px] text-[20px] py-2 font-bold text-center font-bangla bg-black text-white">
           All product (সমস্ত পণ্য)
         </h1>
         <div className="flex justify-between flex-wrap gap-5 mt-10">

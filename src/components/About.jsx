@@ -6,8 +6,8 @@ const About = () => {
   return (
     <section id="about" className="mt-14 mb-20">
       <Container>
-        <h1 className="text-[35px] font-bold text-white text-center font-bangla bg-black">
-          Bakery about(বেকারি সম্পর্কে)
+        <h1 className="xl:text-[35px] text-[20px] py-2 font-bold text-white text-center font-bangla bg-black">
+          Bakery about (বেকারি সম্পর্কে)
         </h1>
         <div className="flex xl:flex-row flex-col items-center gap-5 mt-10">
           <div className="xl:w-[50%] w-full">

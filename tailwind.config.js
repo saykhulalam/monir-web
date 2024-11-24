@@ -14,7 +14,7 @@ export default {
         bangla: ["'Anek Bangla' , sans-serif;"],
       },
       maxWidth: {
-        container: "1400px",
+        container: "1200px",
       },
     },
   },
