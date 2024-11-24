@@ -101,11 +101,11 @@ const ProducatPage = () => {
         {isPopupOpen && (
           <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
             <div className="bg-white p-5 rounded shadow-md w-[400px]">
-              <h2 className="text-lg font-bold mb-4">Order Form</h2>
+              <h2 className="text-xl font-bold mb-4 font-bangla">Order Form</h2>
               <form onSubmit={handleSubmit}>
                 <div className="mb-3">
-                  <label className="block text-sm font-bold mb-1">
-                    Product
+                  <label className="block text-sm font-bold mb-1 font-bangla">
+                    Product (পণ্য)
                   </label>
                   <input
                     type="text"
@@ -115,8 +115,8 @@ const ProducatPage = () => {
                   />
                 </div>
                 <div className="mb-3">
-                  <label className="block text-sm font-bold mb-1">
-                    Address
+                  <label className="block text-sm font-bold mb-1 font-bangla">
+                    Address (ঠিকানা)
                   </label>
                   <input
                     type="text"
@@ -128,7 +128,9 @@ const ProducatPage = () => {
                   />
                 </div>
                 <div className="mb-3">
-                  <label className="block text-sm font-bold mb-1">Phone</label>
+                  <label className="block text-sm font-bold mb-1 font-bangla">
+                    Phone (ফোন নম্বর)
+                  </label>
                   <input
                     type="text"
                     name="phone"
@@ -139,8 +141,8 @@ const ProducatPage = () => {
                   />
                 </div>
                 <div className="mb-3">
-                  <label className="block text-sm font-bold mb-1">
-                    Quantity
+                  <label className="block text-sm font-bold mb-1 font-bangla">
+                    KG (কেজি)
                   </label>
                   <input
                     type="number"
