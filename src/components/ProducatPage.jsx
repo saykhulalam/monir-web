@@ -65,9 +65,10 @@ const ProducatPage = () => {
       Quantity: ${formData.quantity}
     `;
 
-    // Send message to Tawk.to chat
+    // Simulate sending the form data
     if (window.Tawk_API) {
       window.Tawk_API.addEvent("order", { message: message });
+
       alert("Order sent successfully to live chat!");
     } else {
       alert("Tawk.to chat not initialized!");
