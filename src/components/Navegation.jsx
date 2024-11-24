@@ -7,6 +7,10 @@ import { useState } from "react";
 const Navegation = () => {
   const [isOpen, setOpen] = useState(false);
 
+  let closeNavigate=()=>{
+    setOpen(false)
+  }
+
   return (
     <nav className="py-5 bg-black z-30">
       <Container>
@@ -16,10 +20,12 @@ const Navegation = () => {
               <img className="w-20" src={Logo} alt="logo" />
             </a>
             <ul className="font-bangla xl:flex gap-10 hidden">
-              <li className="text-[17px] font-semibold text-white relative group">
-                All product (সমস্ত পণ্য)
-                <span className="absolute left-0 bottom-0 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
-              </li>
+              <a href="#producat">
+                <li className="text-[17px] font-semibold text-white relative group">
+                  All product (সমস্ত পণ্য)
+                  <span className="absolute left-0 bottom-0 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
+                </li>
+              </a>
               <li className="text-[17px] font-semibold text-white relative group">
                 Bakery about(বেকারি সম্পর্কে)
                 <span className="absolute left-0 bottom-0 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
@@ -39,15 +45,17 @@ const Navegation = () => {
             }`}
           >
             <ul className="font-bangla flex gap-10 flex-col items-center">
-              <li className="text-[17px] font-semibold text-white relative group">
-                All product (সমস্ত পণ্য)
-                <span className="absolute left-0 bottom-0 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
-              </li>
-              <li className="text-[17px] font-semibold text-white relative group">
+              <a href="#producat">
+                <li onClick={closeNavigate} className="text-[17px] font-semibold text-white relative group">
+                  All product (সমস্ত পণ্য)
+                  <span className="absolute left-0 bottom-0 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
+                </li>
+              </a>
+              <li onClick={closeNavigate} className="text-[17px] font-semibold text-white relative group">
                 Bakery about(বেকারি সম্পর্কে)
                 <span className="absolute left-0 bottom-0 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
               </li>
-              <li className="text-[17px] font-semibold text-white relative group">
+              <li onClick={closeNavigate} className="text-[17px] font-semibold text-white relative group">
                 Contact (যোগাযোগ)
                 <span className="absolute left-0 bottom-0 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
               </li>

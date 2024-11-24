@@ -80,7 +80,7 @@ const ProducatPage = () => {
   };
 
   return (
-    <section className="mt-10">
+    <section id="producat" className="mt-10">
       <Container>
         <h1 className="text-[35px] font-bold text-center font-bangla">
           All product (সমস্ত পণ্য)
