@@ -13,7 +13,7 @@ import Banner6 from "../assets/Banner-6.jpg";
 
 const Banner = () => {
   return (
-    <section>
+    <section className=" relative border-b">
       <Container>
         <Carousel
           autoplayDelay={2000}
@@ -21,7 +21,7 @@ const Banner = () => {
           autoplay="true"
           className="xl:mt-10 mt-5"
           navigation={({ setActiveIndex, activeIndex, length }) => (
-            <div className="absolute bottom-4 left-2/4 z-50 flex -translate-x-2/4 gap-2">
+            <div className="absolute hidden bottom-4 left-2/4 z-50  -translate-x-2/4 gap-2">
               {new Array(length).fill("").map((_, i) => (
                 <span
                   key={i}
