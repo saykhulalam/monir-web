@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Container from "./Container";
 import ProductCard from "./ProductCard";
 import producat1 from "../assets/producat1.jpg";
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "../firebase";
 
 const ProducatPage = () => {
   const products = [
@@ -40,6 +42,7 @@ const ProducatPage = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState("");
   const [formData, setFormData] = useState({
+    name: "",      // Added name field for the customer
     address: "",
     phone: "",
     quantity: "",
@@ -55,28 +58,30 @@ const ProducatPage = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const message = `
-      Product: ${selectedProduct}
-      Address: ${formData.address}
-      Phone: ${formData.phone}
-      Quantity: ${formData.quantity}
-    `;
+    const orderData = {
+      product: selectedProduct,
+      name: formData.name,  // Include name in the order data
+      address: formData.address,
+      phone: formData.phone,
+      quantity: formData.quantity,
+      timestamp: new Date(),
+    };
 
-    // Simulate sending the form data
-    if (window.Tawk_API) {
-      window.Tawk_API.addEvent("order", { message: message });
+    try {
+      // Firestore-এ অর্ডার ডেটা যোগ করুন
+      await addDoc(collection(db, "orders"), orderData);
+      alert("Order placed successfully!");
 
-      alert("Order sent successfully to live chat!");
-    } else {
-      alert("Tawk.to chat not initialized!");
+      // Reset form and close popup
+      setIsPopupOpen(false);
+      setFormData({ name: "", address: "", phone: "", quantity: "" });
+    } catch (error) {
+      console.error("Error adding order:", error);
+      alert("Failed to place order. Please try again.");
     }
-
-    // Reset form and close popup
-    setIsPopupOpen(false);
-    setFormData({ address: "", phone: "", quantity: "" });
   };
 
   return (
@@ -111,6 +116,19 @@ const ProducatPage = () => {
                     type="text"
                     value={selectedProduct}
                     readOnly
+                    className="w-full border rounded p-2"
+                  />
+                </div>
+                <div className="mb-3">
+                  <label className="block text-sm font-bold mb-1 font-bangla">
+                    Name (নাম)
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
                     className="w-full border rounded p-2"
                   />
                 </div>
