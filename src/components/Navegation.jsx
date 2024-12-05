@@ -13,7 +13,7 @@ const Navegation = () => {
   };
 
   return (
-    <nav className="py-5 bg-black z-30 fixed top-0 w-full">
+    <nav className="py-6 bg-black z-30 fixed top-0 w-full">
       <Container>
         <div className=" relative">
           <div className="flex items-center justify-between">
@@ -53,6 +53,16 @@ const Navegation = () => {
             }`}
           >
             <ul className="font-bangla flex gap-10 flex-col items-center">
+              <Link to="/">
+                <li
+                  onClick={closeNavigate}
+                  className="text-[17px] font-semibold text-white relative group"
+                >
+                  Home{" "}
+                  <span className="absolute left-0 bottom-0 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
+                </li>
+              </Link>
+
               <Link to="/producat">
                 <li
                   onClick={closeNavigate}
