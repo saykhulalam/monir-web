@@ -3,6 +3,7 @@ import Container from "../components/Container.jsx";
 import Logo from "../assets/logo.png";
 import Hamburger from "hamburger-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navegation = () => {
   const [isOpen, setOpen] = useState(false);
@@ -16,28 +17,31 @@ const Navegation = () => {
       <Container>
         <div className=" relative">
           <div className="flex items-center justify-between">
-            <a href="/">
+            <Link to="/">
               <img className="w-20" src={Logo} alt="logo" />
-            </a>
+            </Link>
+
             <ul className="font-bangla xl:flex gap-10 hidden">
-              <a href="#producat">
+              <Link to="/producat">
                 <li className="text-[17px] font-semibold text-white relative group">
                   All product (সমস্ত পণ্য)
                   <span className="absolute left-0 bottom-0 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
                 </li>
-              </a>
-              <a href="#about">
+              </Link>
+
+              <Link to="/about">
                 <li className="text-[17px] font-semibold text-white relative group">
                   Bakery about(বেকারি সম্পর্কে)
                   <span className="absolute left-0 bottom-0 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
                 </li>
-              </a>
-              <a href="#contact">
+              </Link>
+
+              <Link to="contact">
                 <li className="text-[17px] font-semibold text-white relative group">
                   Contact (যোগাযোগ)
                   <span className="absolute left-0 bottom-0 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
                 </li>
-              </a>
+              </Link>
             </ul>
             <div className="text-white xl:hidden">
               <Hamburger toggled={isOpen} toggle={setOpen} />
@@ -49,7 +53,7 @@ const Navegation = () => {
             }`}
           >
             <ul className="font-bangla flex gap-10 flex-col items-center">
-              <a href="#producat">
+              <Link to="/producat">
                 <li
                   onClick={closeNavigate}
                   className="text-[17px] font-semibold text-white relative group"
@@ -57,8 +61,9 @@ const Navegation = () => {
                   All product (সমস্ত পণ্য)
                   <span className="absolute left-0 bottom-0 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
                 </li>
-              </a>
-              <a href="#about">
+              </Link>
+
+              <Link to="/about">
                 <li
                   onClick={closeNavigate}
                   className="text-[17px] font-semibold text-white relative group"
@@ -66,8 +71,9 @@ const Navegation = () => {
                   Bakery about(বেকারি সম্পর্কে)
                   <span className="absolute left-0 bottom-0 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
                 </li>
-              </a>
-              <a href="#contact">
+              </Link>
+
+              <Link to="contact">
                 <li
                   onClick={closeNavigate}
                   className="text-[17px] font-semibold text-white relative group"
@@ -75,7 +81,7 @@ const Navegation = () => {
                   Contact (যোগাযোগ)
                   <span className="absolute left-0 bottom-0 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
                 </li>
-              </a>
+              </Link>
             </ul>
           </div>
         </div>
